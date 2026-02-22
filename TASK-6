@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+float s1, s2, s3, s4;
+
+// Input sides
+printf("Enter four side lengths:\n");
+scanf("%f %f %f %f", &s1, &s2, &s3, &s4);
+
+// Check validity
+if (s1 <= 0 || s2 <= 0 || s3 <= 0 || s4 <= 0) {
+printf("Not a valid quadrilateral.\n");
+}
+else {
+// Check for Square
+if (s1 == s2 && s2 == s3 && s3 == s4) {
+printf("The quadrilateral is a Square.\n");
+}
+else {
+// Check for Rectangle (opposite sides equal)
+if (s1 == s3 && s2 == s4) {
+printf("The quadrilateral is a Rectangle.\n");
+}
+else {
+printf("The quadrilateral is a General Quadrilateral.\n");
+}
+}
+}
+
+return 0;
+}
+
