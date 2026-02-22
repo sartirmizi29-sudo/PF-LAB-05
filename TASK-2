@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+float data, rate, totalBill;
+int customer;
+
+// Input
+printf("Enter Data Used (in GB): ");
+scanf("%f", &data);
+
+printf("Enter Customer Type (1 for Prepaid, 2 for Postpaid): ");
+scanf("%d", &customer);
+
+// Nested decision structure
+if (data <= 2) {
+rate = 50;
+}
+else if (data > 2 && data <= 10) {
+if (customer == 1) {
+rate = 40;   // Prepaid
+
+}
+else if (customer == 2) {
+rate = 35;   // Postpaid
+}
+else {
+printf("Invalid Customer Type!\n");
+return 0;
+}
+}
+else {  // dataUsed > 10
+rate = 25;
+}
+
+// Calculate total bill
+totalBill = data * rate;
+
+// Output
+printf("Rate per GB: Rs. %.2f\n", rate);
+printf("Total Mobile Data Bill: Rs. %.2f\n", totalBill);
+
+return 0;
+}
+
+

@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+int fscore, age;
+int discount = 0;
+
+// Input from user
+printf("Enter Fitness Score: ");
+scanf("%d", &fscore);
+
+printf("Enter Age: ");
+scanf("%d", &age);
+
+// Nested if-else logic
+if (fscore >= 85) {
+if (age < 25) {
+discount = 40;
+} else {
+discount = 25;
+}
+} else {
+if (fscore >= 70 && age < 30) {
+discount = 15;
+} else {
+discount = 0;
+}
+}
+
+// Output result
+if (discount > 0) {
+printf("You get a %d%% discount on membership.\n", discount);
+} else {
+printf("Sorry, no discount available.\n");
+}
+
+return 0;
+}
