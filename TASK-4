@@ -1,0 +1,80 @@
+#include <stdio.h>
+
+int main() {
+int category, subCategory, quantity;
+int price = 0;
+char bookName[50];
+
+// Select Book Category
+printf("Select Book Category:\n");
+printf("1. Fiction\n");
+printf("2. Non-Fiction\n");
+printf("Enter choice: ");
+scanf("%d", &category);
+
+switch (category) {
+
+case 1:  // Fiction
+printf("Select Fiction Type:\n");
+printf("1. Novel (Rs. 600)\n");
+printf("2. Comic (Rs. 300)\n");
+printf("Enter choice: ");
+scanf("%d", &subCategory);
+
+switch (subCategory) {
+case 1:
+price = 600;
+printf(bookName, "Novel");
+break;
+case 2:
+price = 300;
+printf(bookName, "Comic");
+break;
+default:
+printf("Invalid Fiction Choice!\n");
+return 0;
+}
+break;
+
+case 2:  // Non-Fiction
+printf("Select Non-Fiction Type:\n");
+printf("1. Biography (Rs. 800)\n");
+printf("2. Self-Help (Rs. 500)\n");
+printf("Enter choice: ");
+scanf("%d", &subCategory);
+
+switch (subCategory) {
+case 1:
+price = 800;
+printf(bookName, "Biography");
+break;
+case 2:
+price = 500;
+printf(bookName, "Self-Help");
+break;
+default:
+printf("Invalid Non-Fiction Choice!\n");
+return 0;
+}
+break;
+
+default:
+printf("Invalid Category!\n");
+return 0;
+}
+
+// Enter quantity
+printf("Enter Quantity: ");
+scanf("%d", &quantity);
+
+// Calculate total bill
+int totalBill = price * quantity;
+
+// Output
+printf("\nSelected Book: %s\n", bookName);
+printf("Price per Book: Rs. %d\n", price);
+printf("Quantity: %d\n", quantity);
+printf("Total Bill: Rs. %d\n", totalBill);
+
+return 0;
+}
