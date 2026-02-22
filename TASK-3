@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+int main() {
+int mainType, subType;
+float weight, rate = 0, totalFee;
+
+// Input main luggage type
+printf("Select Main Luggage Type:\n");
+printf("1. Handbag\n");
+printf("2. Checked Bag\n");
+printf("3. Sports Equipment\n");
+printf("Enter choice: ");
+scanf("%d", &mainType);
+
+printf("Enter Weight (in kg): ");
+scanf("%f", &weight);
+
+switch (mainType) {
+
+case 1:  // Handbag
+printf("Select Handbag Type:\n");
+printf("1. Small\n");
+printf("2. Large\n");
+printf("Enter choice: ");
+scanf("%d", &subType);
+
+switch (subType) {
+case 1:
+rate = 100;   // Small Handbag
+break;
+case 2:
+rate = 200;   // Large Handbag
+break;
+default:
+printf("Invalid Handbag Type!\n");
+return 0;
+}
+break;
+case 2:  // Checked Bag
+printf("Select Checked Bag Type:\n");
+printf("1. Domestic\n");
+printf("2. International\n");
+printf("Enter choice: ");
+scanf("%d", &subType);
+
+switch (subType) {
+case 1:
+rate = 300;   // Domestic
+break;
+case 2:
+rate = 500;   // International
+break;
+default:
+printf("Invalid Checked Bag Type!\n");
+return 0;
+}
+break;
+
+case 3:  // Sports Equipment
+rate = 1000;   // Fixed rate per kg
+break;
+
+default:
+printf("Invalid Main Luggage Type!\n");
+return 0;
+}
+
+// Calculate total fee
+totalFee = weight * rate;
+
+// Output
+printf("Rate per kg: Rs. %.2f\n", rate);
+printf("Total Luggage Fee: Rs. %.2f\n", totalFee);
+
+return 0;
+}
