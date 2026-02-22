@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+long enteredCard, validCard = 123456789;               
+int enteredPIN, validPIN = 1234;                                  
+float balance = 50000.0;                                             
+float amount;
+
+// Input
+printf("Enter Card Number: ");
+scanf("%ld", &enteredCard);
+
+printf("Enter PIN: ");
+scanf("%d", &enteredPIN);
+
+printf("Enter Transaction Amount: ");
+scanf("%f", &amount);
+
+// Nested if with logical operators
+if (enteredCard == validCard) {
+
+if (enteredPIN == validPIN) {
+
+if (amount > 0 && amount <= balance) {
+balance -= amount;
+printf("Transaction Successful!\n");
+printf("Remaining Balance: Rs. %.2f\n", balance);
+}
+else {
+printf("Insufficient Funds or Invalid Amount!\n");
+}
+}
+else {
+printf("Invalid PIN!\n");
+}
+}
+else {
+printf("Invalid Card!\n");
+}
+
+return 0;
+}
